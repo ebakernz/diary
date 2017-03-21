@@ -1,0 +1,26 @@
+/*
+	PAGE HEADER
+	Banner across top
+ */
+
+.typography header {
+	background: $orange;
+
+	a.navToggle,
+	a.home {
+		font-size: 1.8em;
+		color: $grey;
+		float: left;
+		padding: 13px 0 13px 16px;
+		border: 0;
+
+		&:hover {  }
+	}
+
+	h1 {
+		font-family: Pacifico;
+		font-size: 1.5em;
+		color: $grey;
+		text-align: center;
+	}
+}

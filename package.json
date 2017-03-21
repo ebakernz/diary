@@ -1,0 +1,48 @@
+{
+  "name": "Diary",
+  "version": "1.0.0",
+  "author": "Emma Baker",
+  "description": "Diary app to capture child's early life",
+  "repository": "https://github.com/ebakernz/diary",
+  "licenses": {
+    "type": "Apache License",
+    "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+  },
+  "devDependencies": {
+    "webpack": "1.13.2",
+    "webpack-strip": "*",
+    "node-sass": "*",
+    "extract-text-webpack-plugin": "*",
+
+    "babel": "^5.8.29",
+    "babel-core": "6.14.0",
+    "babel-loader": "6.2.5",
+    "babel-preset-es2015": "*",
+    "babel-preset-react": "*",
+    "babel-preset-stage-2": "*",
+    "redux": "*",
+    "react": "*",
+    "react-dom": "*",
+    "react-fontawesome": "*",
+    
+    "babel-loader": "*",
+    "sass-loader": "*",
+    "style-loader": "*",
+    "css-loader": "*",
+    "url-loader": "*",
+    "file-loader": "*",
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+
+    "expose-loader": "*",
+    "jquery": "3.0.0"
+  },
+  "scripts": {
+    "dev": "NODE_ENV=development webpack --watch",
+    "prod": "NODE_ENV=production webpack --watch"
+  },
+  "dependencies": {
+    "masonry-layout": "^4.1.1"
+  }
+}

@@ -1,0 +1,30 @@
+/**
+ * Colours
+ **/
+
+$black: #000000;
+$white: #FFFFFF;
+$grey: #505050;
+$light_grey: #EEEEEE;
+$blue: #06b8e4;
+$orange: #fdc52e;
+$green: #69bd45;
+$yellow: #ffd02c;
+$red: #fb4540;
+$aqua: #09b7a5;
+
+.black-text { 				color: $black !important; }
+.blue-text { 				color: $blue !important; }
+.grey-text {				color: $grey !important; }
+.green-text {				color: $green !important; }
+.yellow-text {				color: $yellow !important; }
+.red-text {					color: $red !important; }
+
+.black-background { 		background-color: $black !important; }
+.blue-background { 			background-color: $blue !important; }
+.grey-background {			background-color: $grey !important; }
+.green-background {			background-color: $green !important; }
+.yellow-background {		background-color: $yellow !important; }
+.red-background {			background-color: $red !important; }
+
+

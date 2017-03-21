@@ -1,0 +1,46 @@
+ 
+/**
+ * 3rd party
+ *
+ * External plugins and styles
+ **/
+@import 'vendor/font-awesome';
+
+
+/**
+ * Global 
+ *
+ * Styles and mixins that are used throughout the website. Keep things logically
+ * separated into concern-based filenames (ie typography, forms, etc)
+ **/
+@import 'global/reset';
+@import 'global/variables';
+@import 'global/mixins';
+@import 'global/layout';
+@import 'global/typography';
+@import 'global/forms';
+@import 'global/pagehead';
+
+
+/**
+ * Self-contained components
+ *
+ * Any [significant] component that is reused throughout the site. Try and keep it's
+ * styles self-contained for easy plug-and-play into other templates 
+ **/
+@import 'components/navigation';
+@import 'components/form-login';
+
+
+/**
+ * Page-specific
+ *
+ * These should match the class of said page (ie HomePage = homepage, Contact = contact)
+ **/
+@import 'pages/entries';
+
+
+/*
+	Responsive
+ */
+@import 'global/responsive';

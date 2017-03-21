@@ -1,0 +1,64 @@
+/*
+--- CLIENT
+--- Editor stylesheet
+--- By James Barnsley
+*/
+
+form {
+	margin: 0 20px;
+}
+
+input,
+select,
+textarea,
+option,
+button {
+	font-family: 'Open Sans', serif;
+	font-size: 14px;
+	padding: 10px 2%;
+	box-sizing: border-box;
+	border: 1px solid $grey;
+	width: 96%;
+}
+
+.field {
+	padding-bottom: 15px;
+
+	&.text {
+		input {			
+			&:focus,
+			&:active {
+				border-color: $blue;
+			}
+		}
+	}
+}
+
+input[type="submit"],
+input[type="cancel"] {
+	@include animate();
+	background: $blue;
+	color: #FFFFFF;
+	cursor: hand;
+	cursor: pointer;
+	text-decoration: none;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: 700;
+	border: 0;
+	width: 140px;
+}
+
+input[type="submit"]:hover,
+input[type="cancel"]:hover {
+	background: darken($blue, 10%);
+}
+
+::-webkit-input-placeholder {	color: rgba(0,0,0,0.25); }
+:-moz-placeholder {				color: rgba(0,0,0,0.25); }
+::-moz-placeholder {			color: rgba(0,0,0,0.25); }
+:-ms-input-placeholder {		color: rgba(0,0,0,0.25); }
+
+
+
+

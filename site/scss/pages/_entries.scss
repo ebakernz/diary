@@ -1,0 +1,62 @@
+/*
+	ENTRY
+ */
+
+.typography .entries-grid a.entry-summary {
+	display: block;
+	width: 33.33%;
+	box-sizing: border-box;
+	padding: 10px;
+	float: left;
+	color: #000 !important;
+	text-decoration: none;
+	border: 0;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+
+	img {
+		width: 100%;
+		display: block;
+	}
+
+	.liner {
+		background: $light-grey;
+
+		h3 {
+			font-size: 1.3em;
+			font-weight: 600;
+			padding: 0;
+		}
+	}
+
+	&:hover {
+		.liner {
+			background: darken($light_grey,5%);
+		}
+	}
+}
+
+.single-entry {
+
+	margin: 15px 0;
+
+	.button {
+		float: right;
+	}
+
+	.content {
+		width: 75%;
+		float: left;
+
+		img {
+			max-width: 100%;
+		}
+	}
+
+	aside {
+		width: 20%;
+		float: right;
+	}
+}

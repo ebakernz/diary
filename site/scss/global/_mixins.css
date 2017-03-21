@@ -1,0 +1,68 @@
+
+/**
+ * Ease between states
+ * Use this to smooth hover/active/focus events
+ **/ 
+@mixin animate( $duration: 0.2s, $easing: ease-in-out ){
+	-webkit-transition: all $duration $easing;
+	   -moz-transition: all $duration $easing;
+		 -o-transition: all $duration $easing;
+		    transition: all $duration $easing; 
+}
+
+
+/**
+ * Clearfix
+ **/
+@mixin clearfix(){
+	&::after {
+		content: '';
+		clear: both;
+		display: block;
+	}
+}
+
+
+/**
+ * Multi-column
+ * @param $cols int = number of columns to span
+ * @param $sum int = total number of columns
+ * @param $gap mixed = gap between items (optional, defaults to 1rem)
+ **/
+@mixin col($cols, $sum, $gap: 1rem){
+	width: percentage($cols/$sum);
+	display: block;
+	float: left;
+	box-sizing: border-box;
+	padding: 0 $gap;
+
+	&:first-of-type {
+		padding-left: 0;
+	}
+
+	&:last-of-type {
+		padding-right: 0;
+	}
+}
+
+/**
+ * Grid panels
+ * Creates a grid of items that have a fixed height
+ * @param $cols int = number of items per row
+ * @param $col_gap percent = gap between items in each row (optional, defaults to 2%)
+ * @param $row_gap percent = gap between row (optional, defaults to 2%)
+ **/
+@mixin grid( $cols, $col_gap: 2%, $row_gap: 2% ){
+	width: ( 0% + ( 100 / $cols ) - ( $col_gap * 2 ) + ( ( $col_gap * 2 ) / $cols ) );
+	box-sizing: border-box;
+	margin: 0 $row_gap $row_gap;
+
+	&:nth-child(#{$cols}n-#{$cols}) {
+		margin-right: 0;
+		@include clearfix;
+	}
+
+	&:nth-child(#{$cols}n-#{$cols - 1}) {
+		margin-left: 0;
+	}
+}

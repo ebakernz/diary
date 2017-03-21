@@ -1,0 +1,74 @@
+
+/**
+ * General layout
+ **/
+
+html {
+	background: #fff;
+	position: relative;
+	height: 100vh;
+	padding-left: 200px;
+	overflow-y: scroll;
+}
+
+main {
+
+}
+
+aside.sidebar {
+	background: $grey;
+	position: fixed;
+	width: 200px;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	border-right: 1px solid darken($grey, 30%);
+
+	.logo {
+		color: $white;
+		display: block;
+		text-align: center;
+		padding: 20px 0;
+		text-decoration: none;
+
+		span {
+			font-size: 2em;
+			display: block;
+			margin-bottom: 6px;
+		}
+
+		p {
+			font-size: 1.2em;
+			font-family: Pacifico;
+		}
+	}
+}
+
+.table {	
+	.row {
+		@include clearfix();
+		
+		&.heading {
+			font-weight: bold;
+			border-bottom: 1px solid $light_grey;
+		}
+	}
+}
+
+.inner {
+	max-width: 1400px;
+	margin: 0 auto;
+}
+
+.liner {
+	padding: 20px;
+}
+
+.button {
+	text-decoration: none;
+	font-size: 1.4em;
+	font-weight: 600;
+
+	&.productive { color: $green; }
+
+}

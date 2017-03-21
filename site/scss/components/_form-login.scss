@@ -1,0 +1,54 @@
+
+.security-page {
+    
+    ul {
+        display: none;
+    }
+
+    form {
+    	margin: 0 auto;
+    	max-width: 500px;
+    	border: 0;
+    	padding: 30px;
+    	background: $light_grey;
+
+    	.field {
+    		&.text {
+    			label {
+    				text-transform: uppercase;
+    				padding-bottom: 4px;
+    			}
+	    		input{
+		    		width: 100%;
+		    	}
+	    	}
+    	}
+
+    	.Actions {
+    		padding-top: 10px;
+    		text-align: center;
+    	}
+
+    	#ForgotPassword {
+    		display: inline-block;
+    		a {
+    			display: inline-block;
+				background: $grey;
+				color: #FFFFFF;
+				cursor: hand;
+				cursor: pointer;
+				text-decoration: none;
+				font-size: 12px;
+				text-transform: uppercase;
+				font-weight: 700;
+				padding: 10px 16px;
+				box-sizing: border-box;
+				border: 0;
+
+				&:hover {
+					background: darken($grey, 10%);
+				}
+    		}
+    	}
+    }    
+}

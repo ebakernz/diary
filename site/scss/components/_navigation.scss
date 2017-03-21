@@ -1,0 +1,51 @@
+/**
+ * NAV PRIMARY
+ **/
+
+nav {
+	a {
+		color: $white;
+		font-size: 1.2em;
+		display: block;
+		text-decoration: none;
+		padding: 14px 5%;
+		width: 90%;
+		background: lighten($grey, 5%);
+		border-bottom: 1px solid darken($grey, 6%);
+		margin-bottom: 2px;
+
+		.icon {
+			display: block;
+			float: left;
+			width: 30px;
+			font-family: FontAwesome;
+			line-height: 23px;
+		}
+
+		&:hover,
+		&:focus,
+		&.current {
+			background: lighten($grey, 20%);
+		}
+
+		&.new {
+			background: $green;
+			.icon:before{
+				content: "\f055";
+			}
+		}
+
+		&.entries .icon:before {
+			content: "\f03a";
+		}
+
+		&.timeline .icon:before {
+			content: "\f017";
+		}
+
+		&.settings .icon:before {
+			content: "\f013";
+		}
+	}
+
+}
