@@ -43,7 +43,6 @@
 	margin: 15px 0;
 
 	.button {
-		float: right;
 	}
 
 	.content {
@@ -58,5 +57,10 @@
 	aside {
 		width: 20%;
 		float: right;
+
+		p, .button { 
+			text-align: right; 
+			display: block; 
+		}
 	}
 }

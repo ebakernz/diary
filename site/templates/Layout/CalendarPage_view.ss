@@ -20,7 +20,7 @@
 					</div>
 
 					<aside>
-						$Created.Nice
+						<p>$Created.Format('j F, Y')</p>
 						<a class="button productive" href="/edit">Edit entry</a>
 					</aside>
 					
