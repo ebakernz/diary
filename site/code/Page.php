@@ -67,6 +67,83 @@ class Page_Controller extends ContentController {
 		Requirements::css('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Pacifico');
 	}
 
+	function Catgorised() {
+		$categories = Category::get();
+		$records = $categories->relation('Entries');
+		Debug::show($records);
+		$records = $this->ToArray($records);
+		Debug::show($records);
+		return $records;
+	}
 
+	public function ToArray($records, $simple = false){
+		$array = [];
+
+		// list of records
+		if (is_array($records) ||
+			$records->class == 'ArrayList' ||
+			$records->class == 'DataList' ||
+			$records->class == 'HasManyList' ||
+			$records->class == 'ManyManyList' ){
+			foreach ($records as $record){			
+				$array_ified = $this->RecordToArray($record, $simple);
+				$array[] = $array_ified;
+			}
+		} else {
+			$array = $this->RecordToArray($records, $simple);
+		}
+
+		return $array;
+	}
+
+	public function RecordToArray($record, $simple = false){
+
+		if ($simple){
+
+			$array = array(
+				'ID' => $record->ID,
+				'Title' => $record->Title,
+				'Link' => $record->Link()
+			);
+			if ($record->ClassName == 'Server'){
+				$array['Host'] = $record->Host;
+			}
+			return $array;
+
+		} else {
+
+			switch ($record->ClassName){
+
+				case 'Entry':
+
+					return array(
+						'ID' => $record->ID,
+						'Date' => $record->FormattedDate(),
+						'Title' => $record->Title,
+						'Content' => $record->Content,
+						'SummaryText' => $record->SummaryText(),
+						'Image' => ($record->Image()->exists() ? $record->Image()->URL : null),			
+						'Link' => $record->Link(),
+						'EditLink' => $record->EditLink(),
+						'Categories' => $this->ToArray($record->Categories()),
+						'canEdit' => $record->canEdit(),
+						'canDelete' => $record->canDelete()
+					);
+					break;
+
+				case 'Category':
+
+					return array(
+						'ID' => $record->ID,
+						'Title' => $record->Title,
+						'URLTitle' => $record->URLTitle(),
+					);
+					break;
+
+				default:
+					return $record->ToArray();
+			}
+		}
+	}
 
 }

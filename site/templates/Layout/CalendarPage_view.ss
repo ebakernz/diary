@@ -3,11 +3,13 @@
 	<% include PageHead %>
 
 	<div class="inner">
-		<% if Entry %>
 
-			
+		<div id="entry" data-id={$Entry.ID}></div>
 
+		
+<!--  		<% if Entry %>
 			<% with Entry %>
+
 				<div class="single-entry">
 
 					<div class="content">
@@ -21,15 +23,24 @@
 
 					<aside>
 						<p>$Created.Format('j F, Y')</p>
-						<a class="button productive" href="/edit">Edit entry</a>
+						
+						<% if Categories %>
+							<% loop Categories %>
+								<span class="category $URLTitle"></span>
+							<% end_loop %>
+						<% end_if %>
+						
+						<a class="button productive" href="{$Top.Link}edit/$ID">Edit entry</a>
 					</aside>
 					
 				</div>
-			<% end_with %>
 
+			<% end_with %>
 		<% else %>
+
 			<div class="no-results">Could not view entry</div>
-		<% end_if %>
+
+		<% end_if %> -->
 
 	</div>
 </main>

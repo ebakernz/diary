@@ -50,7 +50,7 @@ aside.sidebar {
 		
 		&.heading {
 			font-weight: bold;
-			border-bottom: 1px solid $light_grey;
+			border-bottom: 1px solid $lightgrey;
 		}
 	}
 }
@@ -72,3 +72,33 @@ aside.sidebar {
 	&.productive { color: $green; }
 
 }
+
+
+.clear {
+	clear: both; }
+	
+	
+// .cf:before,
+// .cf:after {
+//     content: " "; /* 1 */
+//     display: table; /* 2 */
+// }
+
+// .cf:after {
+//     clear: both;
+// }
+/* Clear fix */
+.cf:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+.cf { display: inline-block; }
+
+/* start commented backslash hack \*/
+* html .cf { height: 1%; }
+.cf { display: block; }
+/* close commented backslash hack */

@@ -1,6 +1,22 @@
 <?php
 
 class CalendarPage extends Page {
+
+	private static $has_many = array(
+		'Categories' => 'Category'
+	);
+
+	public function getCMSFields(){	
+		$fields = parent::getCMSFields();
+
+	/*	// Categories
+		$catGridFieldConfig = GridFieldConfig_RecordEditor::create(10);	
+		$catGridField = new GridField("Categories", "Category", $this->Categories(), $catGridFieldConfig);
+		$fields->addFieldToTab('Root.Categories', $catGridField);
+*/
+		return $fields;
+	}
+
 }
 
 class CalendarPage_Controller extends Page_Controller {
@@ -21,6 +37,7 @@ class CalendarPage_Controller extends Page_Controller {
 		'view',
 		'new',
 		'edit',
+		'delete',
 		'EditorToolbar'
 	);
 
@@ -32,15 +49,10 @@ class CalendarPage_Controller extends Page_Controller {
 
 	public static $Entry;
 
-	public function Entries() {
-		return Entry::get();
-	}
-
 	/** 
 	 * Get the current entry (by URL param)
 	 **/
 	public function getEntry(){
-
 		$id = $this->getRequest()->param('ID');
 		if (!$id) return false;
 
@@ -134,6 +146,5 @@ class CalendarPage_Controller extends Page_Controller {
 
 		$this->redirect($entry->Link());
 	}
-
 
 }

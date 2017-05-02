@@ -7,7 +7,6 @@ i18n::set_locale('en_US');
 
 // Extensions
 DataObject::add_extension('SiteConfig', 'SiteConfigExtension');
-ContentController::add_extension('ApiContentControllerExtension');
 
 // specify log files
 $path = BASE_PATH.'/../logs';

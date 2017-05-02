@@ -1,48 +1,48 @@
 import React, { PropTypes } from 'react'
 import FontAwesome from 'react-fontawesome'
 
+import Categories from '../components/Categories'; 
+
 export default class Entries extends React.Component {
 
 	constructor(props) {
 		super(props)
+
 		this.state = {
-			entries: []
+			records: [],
+			editing_record: false,
+			working: false,
+			sort_value: 'Title',
+			sort_reverse: false
 		}
-	}
-
-
-	componentDidMount(){
-		this.getEntries()
-	}
-
-	getEntries() {
-		var self = this;
-
-		$.ajax({
-			type: 'GET',
-			url: global.baseURL+'entries'
-		}).then(
-			response => {
-				self.setState({entries: JSON.parse(response)})
-			}
-		)
 	}
 
 	render(){
 
-		if (!this.state.entries) return <div className="no-results">No entries</div>
-		
+		var self = this;
+		var records = this.props.records;
+
+		if (records.length < 1 ) return <div className="no-results">No entries</div>;
+
 		return(
 			<div>
 				<div className="grid entries-grid">				
 					{
-						this.state.entries.map(entry => {
+						records.map(record => {
 							return (
-								<a href={entry.Link} className="entry-summary grid-item" key={entry.ID}>
-									<div className="entry-image"><img src={entry.Image} /></div>
+								<a href={record.Link} className="entry-summary grid-item" key={record.ID}>
+
+									<div className="categories">
+										<Categories records={record.Categories} />
+									</div>
+
+									<div className="entry-image">
+										{record.Image ? <img src={record.Image} /> : <span></span>}
+									</div>
+
 									<div className="liner">
-										<h3>{entry.Title}</h3>
-										<p>{entry.SummaryText}</p>
+										<h3>{record.Title}</h3>
+										<p>{record.SummaryText}</p>
 									</div>
 								</a>
 							)
