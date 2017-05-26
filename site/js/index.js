@@ -4,8 +4,11 @@
 // compiles into the necessary css files
 require('../scss/index.scss');
 
-// include our components and site elements
+// include general effects
+require('./effects.js');
+
 require('./views/masonry.js');
+require('./views/googlemap.js');
 
 // set our API baseURL
 global.baseURL = '/api/';

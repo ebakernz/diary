@@ -309,7 +309,25 @@ class ApiController extends Controller {
 						break;
 				}
 
-				break;	
+				break;
+
+			case 'users':
+				switch ($action) {
+
+					case 'get_by_id':
+
+					break;
+
+					case 'new':
+
+					break;
+
+					case 'update':
+
+					break;
+
+					
+				}
 
 		}
 

@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react'
+import DOMPurify from 'dompurify'
 
 import Categories from '../components/Categories'; 
 
@@ -67,7 +68,7 @@ export default class Entry extends React.Component {
 					{entry.Image ? <img src={entry.Image} /> : <span></span>}
 
 					<h1>{entry.Title}</h1>
-					<p>{entry.Content}</p>
+					<div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(entry.Content)}}></div>
 
 				</div>
 

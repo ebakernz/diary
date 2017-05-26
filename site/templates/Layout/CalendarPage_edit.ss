@@ -11,6 +11,9 @@
 
 					<h1>Edit entry</h1>
 					$Up.Form
+					<% with $Top.EditorToolbar %>
+						$Top.MediaForm
+					<% end_with %>
 
 				</div>
 

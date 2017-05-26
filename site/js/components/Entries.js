@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import FontAwesome from 'react-fontawesome'
+import DOMPurify from 'dompurify'
 
 import Categories from '../components/Categories'; 
 
@@ -42,7 +43,7 @@ export default class Entries extends React.Component {
 
 									<div className="liner">
 										<h3>{record.Title}</h3>
-										<p>{record.SummaryText}</p>
+										<div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(record.SummaryText)}}></div>
 									</div>
 								</a>
 							)

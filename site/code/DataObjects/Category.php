@@ -22,4 +22,13 @@ class Category extends DataObject {
 		return strtolower(str_replace(' ', '-', $this->Title));
 	}
 
+	public function FormFields() {
+		$fieldList = FieldList::create(array());
+
+		$fieldList->push( HiddenField::create('ID','ID') );
+		$fieldList->push( TextField::create('Title', 'Title') );
+
+		return $fieldList;
+	}
+
 }

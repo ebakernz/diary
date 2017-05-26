@@ -1,0 +1,35 @@
+
+pre,
+pre *,
+.pre,
+.pre *,
+code,
+code *,
+.code,
+.code * {
+	font-family: Consolas, Courier, monospaced;
+	font-size: 14px;
+	line-height: 1.3em;
+}
+
+.code {
+	font-family: Consolas, Courier, monospaced;
+	font-size: 14px;
+	line-height: 1.3em;
+	background: #f5f2f0;
+	display: inline-block;
+	padding: 0px 4px;
+	border: 1px solid #CCCCCC;
+	margin: 0 2px;
+}
+
+.pre {
+	display: block;
+	padding: 8px;
+	background: #f5f2f0;
+	max-height: 400px;
+	overflow-y: auto;
+	margin: 15px 0 30px;
+	border: 1px solid #CCCCCC;
+	border-radius: 2px;
+}

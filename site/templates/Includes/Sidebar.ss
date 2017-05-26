@@ -8,7 +8,7 @@
 
 	<nav class="cf">
 
-		<a href="{$Link}new" class="new">
+		<a href="/entries/new" class="new">
 			<span class="icon"></span>
 			New entry
 		</a>

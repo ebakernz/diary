@@ -2,9 +2,9 @@
 
 class CalendarPage extends Page {
 
-	private static $has_many = array(
+/*	private static $has_many = array(
 		'Categories' => 'Category'
-	);
+	);*/
 
 	public function getCMSFields(){	
 		$fields = parent::getCMSFields();
@@ -28,14 +28,14 @@ class CalendarPage_Controller extends Page_Controller {
 		// file because insufficient information exists when that is being processed
 		$htmlEditorConfig = HTMLEditorConfig::get_active();
 		$htmlEditorConfig->setOption('language', i18n::get_tinymce_lang());
-		$htmlEditorConfig->addButtonsToLine(1, 'code', 'sslink');
+		$htmlEditorConfig->addButtonsToLine(1, 'code', 'link', 'unlink');
 		$htmlEditorConfig->insertButtonsBefore('formatselect', 'styleselect');
 	}
 
 	private static $allowed_actions = array(
 		'Form',
-		'view',
 		'new',
+		'view',		
 		'edit',
 		'delete',
 		'EditorToolbar'

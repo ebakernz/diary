@@ -7,6 +7,10 @@ i18n::set_locale('en_US');
 
 // Extensions
 DataObject::add_extension('SiteConfig', 'SiteConfigExtension');
+DataObject::add_extension("Member", "MemberDecorator");
+
+// custom editor styles
+HtmlEditorConfig::get('cms')->setOption('content_css', 'site/cms/editor.css');
 
 // specify log files
 $path = BASE_PATH.'/../logs';

@@ -4,21 +4,22 @@
 --- By James Barnsley
 */
 
-form {
-	margin: 0 20px;
+form,
+fieldset {
+	margin-top: 20px;
+	width: 100%;
 }
 
 input,
 select,
-textarea,
-option,
-button {
+textarea {
 	font-family: 'Open Sans', serif;
 	font-size: 14px;
 	padding: 10px 2%;
 	box-sizing: border-box;
-	border: 1px solid $grey;
-	width: 96%;
+	background: $lightgrey;
+	border: 0;
+	width: 100%;
 }
 
 .field {
@@ -31,6 +32,51 @@ button {
 				border-color: $blue;
 			}
 		}
+	}
+
+	&.ss-uploadfield .middleColumn {
+		background: $lightgrey;
+		max-width: 100%;
+		min-width: auto;
+		border: 0;
+		border-radius: 0;
+
+		.ss-ui-button.ss-uploadfield-fromcomputer,
+		.ss-ui-button.ss-uploadfield-fromfiles {
+			font-family: 'Open Sans';
+			color: $blue;
+			font-size: 16px;
+			font-weight: 700;
+			padding: 4px 5px;
+			display: inline-block;
+			border: 1px solid $grey;
+			background: $white;
+
+			&:hover { 
+				color: darken($blue, 25%);
+			}
+		}
+
+		.ui-corner-all { 
+			border-radius: 0; 
+		}
+	}
+
+}
+
+.listbox {
+
+	option {
+		width: 96%;
+		padding: 10px 2%;
+		margin: 0 0% 5px 0;
+		text-align: center;
+		background: $white;
+		border: 1px solid $grey;
+	}
+	.description {
+		color: $grey;
+		font-style: italic;
 	}
 }
 
@@ -59,6 +105,12 @@ input[type="cancel"]:hover {
 ::-moz-placeholder {			color: rgba(0,0,0,0.25); }
 :-ms-input-placeholder {		color: rgba(0,0,0,0.25); }
 
+.ss-upload .ss-uploadfield-fromcomputer input {
+	width: auto;
+}
+.ss-uploadfield .ss-ui-button {
+	width: auto;
+}
 
 
 

@@ -34,17 +34,17 @@ class Entry extends DataObject {
 
 		$fieldList->push( HiddenField::create('ID','ID') );
 		$fieldList->push( TextField::create('Title', 'Title') );
-		$fieldList->push( HtmlEditorField::create('Content', 'Content') );
+		$fieldList->push( HtmlEditorField::create('Content', 'Content') );		
 		$fieldList->push( UploadField::create('Image','Image') );
 		$fieldList->push( ListBoxField::create(
-				'Categories', 
+				'Categories',
 				'Category', 
 				Category::get()->map('ID', 'Title')->toArray(),
 				$value = array(),
 				$size = null,
 				$multiple = true
-			)
-		);
+			)->setDescription('Hold shift to multi-select')
+		);		
 
 		return $fieldList;
 	}
@@ -55,8 +55,13 @@ class Entry extends DataObject {
 
 	/* Create summary text */
 	public function SummaryText() {
-		$words = explode(" ", $this->Content);
-		return implode(" ", array_splice($words, 0, 15));
+		// Replace heading tags with paragraph tags
+		$content = preg_replace('/<h[1-6]>(.*?)<\/h[1-6]>/', '<p>$1</p>', $this->Content);
+
+		$words = explode(" ", $content);
+	//	$words = preg_split('@(?=<p>)@', $content);
+
+		return implode(" ", array_splice($words, 0, 30)) . '...</p>';
 	}
 
 	public function Link(){

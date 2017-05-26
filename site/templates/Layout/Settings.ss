@@ -3,14 +3,12 @@
 	<% include PageHead %>
 
 	<div class="inner">	
-		<div class="entry-edit">
-
-			<h1>Add new entry</h1>
+		<div class="settings-edit">
 			$Form
-			<% with $EditorToolbar %>
-				$Form
-			<% end_with %>
+		</div>
 
+		<div class="category-edit">
+			$CategoryForm
 		</div>
 
 	</div>
