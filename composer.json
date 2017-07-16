@@ -8,7 +8,6 @@
 		"silverstripe/userforms": "dev-master",
 		"undefinedoffset/sortablegridfield": "dev-master",
 		"unclecheese/betterbuttons": "1.3.14",
-		"jaedb/dev-tools": "dev-master",
         "google/apiclient": "1.1.*",
 		"gdmedia/ss-auto-git-ignore": "0.0.3"
 	},

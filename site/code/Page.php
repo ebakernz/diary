@@ -50,6 +50,10 @@ class Page_Controller extends ContentController {
 	public function init() {	
 		parent::init();
 		
+		if($this->ClassName == 'MapPage') {
+			Requirements::javascript('https://maps.googleapis.com/maps/api/js?key=AIzaSyBsGcLisYoTvB7GguIAy0RujzP3NO8ZOHc&libraries=drawing');		
+		}
+
 		// global compiled javascript
 		if( Director::isLive() ){
 			Requirements::javascript('site/production/index.min.js');
@@ -65,6 +69,9 @@ class Page_Controller extends ContentController {
 		}
 
 		Requirements::css('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Pacifico');
+
+		Requirements::set_force_js_to_bottom(true);
+
 	}
 
 	function Catgorised() {

@@ -3,11 +3,14 @@
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=drawing">
 
+// https://developers.google.com/maps/documentation/javascript/drawinglayer
+// https://developers.google.com/maps/documentation/javascript/examples/drawing-tools
+
 function initMap() {
 
 	var map = new google.maps.Map(document.getElementById('map'), {
 	  center: {lat: -28.539241, lng: 150.298253},
-	  zoom: 8
+	  zoom: 13
 	});
 
 	var drawingManager = new google.maps.drawing.DrawingManager({
@@ -28,6 +31,12 @@ function initMap() {
 	  }
 	});
 	drawingManager.setMap(map);
+
+	/*google.maps.event.addListener(drawingManager, 'overlaycomplete', function(event) {
+		if (event.type == 'polygon') {
+			var radius = event.overlay.getRadius();
+		}
+	});*/
 
 }
 
